@@ -74,55 +74,8 @@ write to the backup file we read from, then the security is compromised.
 
 
 
-### Getting Python and RepyV2
 
-Please refer to the [Build Instructions](../Contributing/BuildInstructions.md#prerequisites)
-for details.
 
-Once you have built RepyV2 into a directory of your choice, change into that
-directory. Use the command below in order to run your RepyV2 applications:
-
-```python3 repy.py encasementlib.r2py [security_layer].r2py [application].r2py```
-
-(Replace '[security_layer].r2py' and '[application].r2py' by the names of the
-security layers and application that you want to run.) 
-
-In order to test whether or not these steps worked, please copy and paste
-the code found below for the sample security layer and sample attack.
-
-If you got an error, please go through the troubleshooting section found below.
-
-### Troubleshooting Repy code
-----
-If you can't get Repy files to run, some of the following common errors may
-have occurred:
-
- * using `print` instead of `log`:
-
-Repy is a subset of Python, but its syntax is slightly different.  For
-example, Python's `print` statement cannot be used; Repy has `log` for
-that. For a full list of acceptable syntax please see
-[https://github.com/kcg295/docs/blob/master/Programming/RepyV2API.md]
-
- * command line errors:
-
-**files are missing:** In the above command line call, you must have
-`repy.py`, encasementlib.r2py, the security layer and
-the program you want to run in the current working directory.  If any or
-all of the above files are not in that directory then you will not be able
-to run repy files.  
-
-<!--
-AR: This doesn't apply when building from source or getting the runtime tarball only (it does for clearinghouse downloads).
- * Downloading the wrong version of Seattle:
-
-Seattle is operating system dependent.  If you download the Windows
-version, you need to use the Windows command line.  For Windows 7 this is
-PowerShell.  You can open a new terminal by going to start, search, type
-powershell.  If you downloaded the Linux version you must use a Linux OS
-and Linux terminal.  
-
--->
 
 
 ### Tutorials for Repy and Python
@@ -275,30 +228,4 @@ layer with your attack program
 Make sure you went through the "How to get RepyV2" section!
 
 
-# Notes and Resources
-----
- 
- * For a complete list of syntax in Repyv2 please visit:
- * **[https://github.com/kcg295/docs/blob/master/Programming/RepyV2API.md]**
- 
- * The following link is an excellent source for information about security layers: **[https://ssl.engineering.nyu.edu/papers/cappos_seattle_ccs_10.pdf]**
 
- * **Note:** It is possible to add multiple security layers to Repy, this
-may be useful for testing different mitigations separately.  This is
-done with the following command at the terminal:
-
-```python3 repy.py encasementlib.r2py [security_layer1].r2py [security_layer2].r2py [security_layer3].r2py [program].r2py```
-
-**Your security layer must produce no output!! **
-
- * In repy log replaces print from python.  This may be helpful when
-testing if Repy installed correctly.
-
-
-# What to turn in?
-----
- * Turn in a repy file called reference_monitor_[ netid ].r2py with all
-letters in lowercase.
-
-* **Never raise unexpected errors or produce any output.**  Your program
-must produce no output when run normally.
